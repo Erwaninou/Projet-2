@@ -370,3 +370,140 @@ footer {
 /*FOOTER*/
 /*MAIN*/
 
+@media screen and (min-width: 600px) {
+	/* HEADER NAVBAR */
+  .header {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "logo . navbar button";
+  }
+  .headerNavLink[data-active=true] {
+    border-top: 3px solid #0065FC;
+  }
+
+}
+
+@media screen and (max-width: 620px) {
+	/* HEADER NAVBAR */
+  .header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "logo . button" "navbar navbar navbar";
+  }
+  .headerimg {
+    order: 0;
+  }
+  .headerSignup {
+    order: 1;
+  }
+  .headerNav {
+    order: 2;
+  }
+  .headerNavLink {
+    border-top: none;
+    border-bottom: 3px solid #F2F2F2;
+    width: 50%;
+  }
+
+  .research-button span {
+		display: none;
+	}
+
+	.research-button {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.active {
+		border-bottom: 5px solid var(--primary);
+	}
+
+	.filter-title {
+		width: 100%;
+	}
+
+	.filter-types {
+		margin: 0 0.5em 0.5em 0;
+	}
+
+	.filter-types i {
+		min-width: 2.5em;
+		min-height: 2.5em;
+		margin-right: 0;
+	}
+
+}
+
+@media screen and (max-width: 1500px) {
+	.lodging-section {
+		flex-direction: column-reverse;
+	}
+
+	.lodging-resum {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.lodging-card {
+		max-width: 30%;
+		margin: 16px;
+	}
+
+	.pop-section {
+		width: 90%;
+		max-width: 100%;
+		margin-left: 0;
+		margin-bottom: 32px;
+	}
+}
+
+
+@media screen and (max-width: 620px) {
+	.lodging-resum {
+		background-color: #fff;
+		padding: 0;
+	}
+
+	.lodging-card {
+		width: 90% ;
+		max-width: 100% ;
+		margin: 16px 0 ;
+		box-shadow: 0 5px 15px #00000033;
+	}
+
+	.pop-section {
+		margin-bottom: 32px;
+		padding: 0 16px;
+	}
+
+	.activity-section {
+		height: 1600px;
+	}
+
+	.activity-content {
+		display: block;
+	}
+
+	.activity-box {
+		width: 100%;
+		max-width: 100%;
+		margin: 32px 0;
+	}
+
+	.activity-box:nth-of-type(1),
+	.activity-box:nth-of-type(2),
+	.activity-box:nth-of-type(3),
+	.activity-box:nth-of-type(4),
+	.activity-box:nth-of-type(5),
+	.activity-box:nth-of-type(6) {
+		height: 40%;
+	}
+
+	/* FOOTER */
+	.footer-container {
+		display: block;
+	}
+
+	.footer-column {
+		width: 100%;
+		padding: 8px 16px;
+	}
+}
