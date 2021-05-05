@@ -425,8 +425,8 @@ footer {
 	}
 
 	.filter-types i {
-		min-width: 2.5em;
-		min-height: 2.5em;
+		min-width: 40px;
+		min-height: 40px;
 		margin-right: 0;
 	}
 
