@@ -7,17 +7,34 @@
   --background: #fff;
 }
 
+@viewport { 
+    width: device-width; 
+    zoom: 1; 
+}
+
+*{
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   background-color: var(--background);
   margin: 0;
   padding: 0;
 }
+
+.link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
 /*HEADER*/
 .header {
   display: grid;
   align-items: center;
   margin: auto;
+  max-width: 1500px;
 }
 .headerImg {
   grid-area: logo;
@@ -60,10 +77,16 @@ body {
 
 /*HEADER*/
 /*MAIN*/
+main {
+  max-width: 1500px;
+  padding: 0 32px;
+  margin: auto;
+}
+
 /*RECHERCHE*/
 .research-title {
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 32px;
 }
 
 .research-subtitle {
@@ -110,13 +133,12 @@ body {
   padding-left: 16px;
   padding-right: 16px;
   cursor: pointer;
-}
+} 
 /*RECHERCHE*/
 /*FILTRE*/
 .filter-container {
   display: flex;
   align-items: center;
-  padding-top: 32px;
   flex-wrap: wrap;
 }
 
@@ -228,7 +250,7 @@ margin-left: 32px;
 .pop-card {
 display: flex;
 min-height: 100px;
-width: 80%;
+width: 100%;
 padding: 8px;
 background-color: var(--background);
 border-radius: 20px;
@@ -275,7 +297,7 @@ color: #b9b9b9;
 /*HEBERGEMENT*/
 /*ACTIVITE*/
 .activity-section {
-  margin: 32px;
+  margin-bottom: 32px;
 }
 
 .activity-content {
@@ -291,7 +313,7 @@ color: #b9b9b9;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 350px;
+  max-width: calc(30% - 96px);
   margin-right: 32px;
   border-radius: 20px;
   overflow: hidden;
@@ -299,28 +321,22 @@ color: #b9b9b9;
 }
 
 
-.activity-box:nth-of-type(1) {
-  height: 100%;
+.activity-box:nth-of-type(1),
+.activity-box:nth-of-type(4) {
+    height: 100%;
 }
 
 .activity-box:nth-of-type(2) {
-  height: 50%;
+    height: 50%;
 }
 
 .activity-box:nth-of-type(3) {
-  height: 35%;
+    height: 35%;
 }
 
-.activity-box:nth-of-type(4) {
-  height: 100%;
-}
-
-.activity-box:nth-of-type(5){
-  height: 45%;
-}
-
+.activity-box:nth-of-type(5),
 .activity-box:nth-of-type(6) {
-  height: 45%;
+    height: 45%;
 }
 
 .activity-img {
@@ -339,33 +355,31 @@ color: #b9b9b9;
 
 /*ACTIVITE*/
 /*FOOTER*/
-footer {
-  background-color: #f2f2f2;
+.footer {
+  background-color: var(--inactive);
+  width: 100%;
 }
 
-.blockFooter {
+.footer-container {
   display: flex;
   max-width: 100%;
-  padding: 0 10px;
-  box-sizing: border-box;
+  width: 1500px;
+  margin: auto;
+  padding: 0 2em;
 }
 
-.interieurblockFooter {
-  width: 40%;
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2em 2em;
+  line-height: 2em;
+}
+.footer-column a {
+  color: #000;
+  text-decoration: none;
 }
 
-.footerTitre {
-  display: block;
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.lignesFooter {
-  color: black;
-  display: block;
-  margin: 15px 0;
-  font-weight: 500;
-}
 
 /*FOOTER*/
 /*MAIN*/
@@ -375,9 +389,6 @@ footer {
   .header {
     grid-template-columns: auto 1fr auto auto;
     grid-template-areas: "logo . navbar button";
-  }
-  .headerNavLink[data-active=true] {
-    border-top: 3px solid #0065FC;
   }
 
 }
@@ -402,10 +413,10 @@ footer {
     border-bottom: 3px solid #F2F2F2;
     width: 50%;
   }
-
-  .research-button span {
-		display: none;
-	}
+  .headerNavLink[data-active=true] {
+    border-top: none;
+    border-bottom: 3px solid #0065FC;
+  }
 
 	.research-button {
 		padding-left: 24px;
@@ -418,6 +429,7 @@ footer {
 
 	.filter-title {
 		width: 100%;
+    font-size:18px;
 	}
 
 	.filter-types {
@@ -431,8 +443,18 @@ footer {
 	}
 
 }
+@media screen and (min-width: 1301px) {
+  .fa-search{
+    display: none;
+  }
+  .filter-container {
+    padding-top: 32px;
+  }
+}
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1300px) {
+
+  
 	.lodging-section {
 		flex-direction: column-reverse;
 	}
@@ -445,25 +467,39 @@ footer {
 	.lodging-card {
 		max-width: 30%;
 		margin: 16px;
+    box-sizing: border-box;
 	}
 
 	.pop-section {
-		width: 90%;
+		width: 100%;
 		max-width: 100%;
 		margin-left: 0;
 		margin-bottom: 32px;
 	}
+
+  .research-button span {
+		display: none;
+	}
 }
 
 
+
 @media screen and (max-width: 620px) {
+  .research-title {
+    margin-bottom: 0;
+    font-size:20px;
+  }
+  
+  .research-subtitle {
+    margin-top: 8px;
+  }
 	.lodging-resum {
 		background-color: #fff;
 		padding: 0;
 	}
 
 	.lodging-card {
-		width: 90% ;
+		width: 100% ;
 		max-width: 100% ;
 		margin: 16px 0 ;
 		box-shadow: 0 5px 15px #00000033;
@@ -472,6 +508,7 @@ footer {
 	.pop-section {
 		margin-bottom: 32px;
 		padding: 0 16px;
+    
 	}
 
 	.activity-section {
@@ -504,6 +541,6 @@ footer {
 
 	.footer-column {
 		width: 100%;
-		padding: 8px 16px;
+		padding: 0.5em 1em;
 	}
 }
