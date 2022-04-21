@@ -346,7 +346,7 @@ color: #b9b9b9;
 }
 
 .activity-box:nth-of-type(2) {
-    height: 50%;
+    height: 55%;
 }
 
 .activity-box:nth-of-type(3) {
@@ -562,12 +562,7 @@ color: #b9b9b9;
     text-rendering : auto;
   }
 
-	.activity-box:nth-of-type(1),
-	.activity-box:nth-of-type(2),
-	.activity-box:nth-of-type(3),
-	.activity-box:nth-of-type(4),
-	.activity-box:nth-of-type(5),
-	.activity-box:nth-of-type(6) {
+	.activity-box {
 		height: 45%;
 	}
 
