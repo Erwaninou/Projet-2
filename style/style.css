@@ -58,6 +58,9 @@ body {
 .headerNavLink[data-active=true] {
   color: var(--primary);
 }
+.headerNavLink:hover {
+  color: #0065FC;
+}
 
 .headerSignup {
   display: flex;
@@ -181,8 +184,13 @@ main {
   border: 2px solid var(--inactive);
   margin-right: 8px;
 }
+.filter-types:hover {
+  background-color: #f3f8ff;
+  transform: scale(1.015);
+}
 /*FILTRE*/
 /*HEBERGEMENT*/
+
 .lodging-section {
   max-width: 100%;
   display: flex;
@@ -295,6 +303,11 @@ margin: 0 0 3px 8px;
 margin: 48px 0 3px 8px;
 color: #b9b9b9;
 }
+
+.pop-card:hover {
+  transform: scale(1.01);
+}
+
 /*POPULAIRE*/
 /*HEBERGEMENT*/
 /*ACTIVITE*/
@@ -309,6 +322,10 @@ color: #b9b9b9;
   justify-content: space-between;
   align-items: center;
   height: 580px;
+}
+
+.activity-box:hover {
+  transform: scale(1.01);
 }
 
 .activity-box {
@@ -393,6 +410,9 @@ color: #b9b9b9;
     grid-template-columns: auto 1fr auto auto;
     grid-template-areas: "logo . navbar button";
   }
+  .headerNavLink:hover {
+    border-top: 3px solid #0065FC;
+  }
 
 }
 
@@ -421,7 +441,9 @@ color: #b9b9b9;
     border-top: none;
     border-bottom: 3px solid #0065FC;
   }
-
+  .headerNavLink:hover {
+    border-bottom-color: #0065FC;
+  }
 
 
 	.research-button {
@@ -457,6 +479,9 @@ color: #b9b9b9;
     padding-top: 32px;
   }
 }
+.lodging-card:hover {
+  transform: scale(1.02);
+}
 
 @media screen and (max-width: 1300px) {
 
@@ -472,8 +497,9 @@ color: #b9b9b9;
 
 	.lodging-card {
 		max-width: 30%;
-		margin: 16px;
+		margin: 5px;
     box-sizing: border-box;
+    
 	}
 
 	.pop-section {
@@ -553,5 +579,38 @@ color: #b9b9b9;
 	.footer-column {
 		width: 100%;
 		padding: 8px 16px;
+	}
+  .footer-column:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .activity-section {
+		height: 1800px;
+	}
+
+	.activity-content {
+		display: block;
+	}
+
+	.activity-box {
+		width: 100%;
+		max-width: 100%;
+		margin: 32px 0;
+	}
+
+  .activity-title {
+    margin-left: 8px;
+    text-rendering : auto;
+  }
+
+	.activity-box:nth-of-type(1),
+	.activity-box:nth-of-type(2),
+	.activity-box:nth-of-type(3),
+	.activity-box:nth-of-type(4),
+	.activity-box:nth-of-type(5),
+	.activity-box:nth-of-type(6) {
+		height: 45%;
 	}
 }
